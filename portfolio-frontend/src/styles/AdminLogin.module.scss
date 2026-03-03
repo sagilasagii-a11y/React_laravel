@@ -1,0 +1,101 @@
+/* Modern Admin Login */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #646cff, #00d4ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: #fff;
+  padding: 40px 32px;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container h2 {
+  margin-bottom: 32px;
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 14px 14px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s;
+  background: none;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  color: #646cff;
+  background: #fff;
+  padding: 0 4px;
+}
+
+.login-button {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #646cff;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  background: #5058e0;
+  transform: translateY(-2px);
+}
+
+.error-msg {
+  color: #e53935;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
+}
