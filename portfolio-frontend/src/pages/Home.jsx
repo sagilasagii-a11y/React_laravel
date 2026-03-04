@@ -74,29 +74,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer with icons */}
+       {/* Footer */}
       <footer className={styles.footer}>
-        <div className={styles.socials}>
-          {profile?.github && (
-            <a href={profile.github} target="_blank" aria-label="GitHub">
-              <FaGithub />
-            </a>
-          )}
-          {profile?.linkedin && (
-            <a href={profile.linkedin} target="_blank" aria-label="LinkedIn">
-              <FaLinkedin />
-            </a>
-          )}
-          {profile?.email && (
-            <a href={`mailto:${profile.email}`} aria-label="Email">
-              <FaEnvelope />
-            </a>
-          )}
+        <div className={styles.footerGrid}>
+
+          <div className={styles.footerCol}>
+            <h3>Follow Me</h3>
+            <div className={styles.socials}>
+              {profile?.github && (
+                <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                  <FaGithub />
+                </a>
+              )}
+
+              {profile?.linkedin && (
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin />
+                </a>
+              )}
+
+              {profile?.email && (
+                <a href={`mailto:${profile.email}`}>
+                  <FaEnvelope />
+                </a>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.footerCol}>
+            <h3>Email</h3>
+            <p>{profile?.email}</p>
+          </div>
+
+          <div className={styles.footerCol}>
+            <h3>Phone</h3>
+            <p>{profile?.phone}</p>
+          </div>
+
+          <div className={styles.footerCol}>
+            <h3>Location</h3>
+            <p>{profile?.location}</p>
+          </div>
+
         </div>
-        <div>Email: {profile?.email}</div>
-        <div>Phone: {profile?.phone}</div>
-        <div>Location: {profile?.location}</div>
+
+        <div className={styles.copy}>
+          © {new Date().getFullYear()} {profile?.full_name}
+        </div>
       </footer>
+
     </div>
   );
 }
